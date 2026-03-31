@@ -1,0 +1,7 @@
+interface:
+  display_name: "PlantStudio Render Debug"
+  short_description: "Diagnose native PlantStudio rendering regressions"
+  default_prompt: "Use $plantstudio-rendering-debug to reproduce a native PlantStudio render issue with a fixed sample .pla, capture PNG proof, localize the bug, and verify the fix."
+
+policy:
+  allow_implicit_invocation: false

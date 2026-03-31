@@ -1,0 +1,7 @@
+interface:
+  display_name: "PlantStudio Linux Harness"
+  short_description: "Maintain native and legacy Linux verification scripts"
+  default_prompt: "Use $plantstudio-linux-harness to update PlantStudio build, smoke, Xvfb, or screenshot wrappers while keeping native and legacy verification reproducible."
+
+policy:
+  allow_implicit_invocation: false

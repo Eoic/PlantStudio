@@ -1,0 +1,7 @@
+interface:
+  display_name: "PlantStudio Native Port"
+  short_description: "Port archival Pascal slices into the native Linux app"
+  default_prompt: "Use $plantstudio-native-port to port one bounded archival PlantStudio behavior cluster into the native Linux workspace with clear ownership, Linux-safe shims, and native verification."
+
+policy:
+  allow_implicit_invocation: false

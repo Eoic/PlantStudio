@@ -1,0 +1,7 @@
+interface:
+  display_name: "PlantStudio Parity Audit"
+  short_description: "Turn missing Linux features into concrete parity tasks"
+  default_prompt: "Use $plantstudio-parity-audit to map one missing PlantStudio Linux feature to archival anchors, a native target path, Linux replacement notes, and exact acceptance criteria."
+
+policy:
+  allow_implicit_invocation: false
