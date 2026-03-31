@@ -1,0 +1,14 @@
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        imagemagick \
+        python \
+        python-gtk2 \
+        xvfb \
+        xauth \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace

@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import os
+
 #import pango
 #import pangocairo
 #import atk
@@ -16,10 +18,11 @@ import uturtle
 import gtkdrawingsurface
 import delphi_compatability
 import utdo
+from path_helpers import app_path, repo_path
 
 example_tdo = utdo.KfObject3D()
 #example_tdo.readFromFile("./3dobject/l_carrot.tdo")
-example_tdo.readFromFile("./3dobject/l_squash.tdo")
+example_tdo.readFromFile(repo_path("3dobject", "l_squash.tdo"))
 
 import uplant
 import ucursor
@@ -157,7 +160,7 @@ class MainWindow:
         
         MakeButton(vbox, "Open library...", self.openLibrary)
 
-        self.fileName = "test.pla"
+        self.fileName = app_path("test.pla")
         #self.fileName = "test tree.pla"
         #self.fileName = "Garden flowers.pla"
         #self.fileName = "Garden flowers.pla"
@@ -230,7 +233,8 @@ def main():
     #return
                 
     global prof
-    prof = hotshot.Profile("hotshot_stats")
+    profile_path = os.environ.get("PLANTSTUDIO_PROFILE_PATH", app_path("hotshot_stats"))
+    prof = hotshot.Profile(profile_path)
     application = MainWindow()
     gtk.main()
     prof.close()
@@ -238,7 +242,4 @@ def main():
 if __name__ == "__main__":
     main()
     
-
-
-
 

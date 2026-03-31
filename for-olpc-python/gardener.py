@@ -16,6 +16,7 @@ import uturtle
 import gtkdrawingsurface
 import delphi_compatability
 import utdo
+from path_helpers import app_path, repo_path
 
 import uplant
 import ucursor
@@ -33,7 +34,7 @@ class PlantDrawingArea(gtk.DrawingArea):
             self.connect("motion_notify_event", self.trackMouseWithGlove)
         self.glove = gtk.Image()
         #self.glove.set_from_file("images/glove.png")
-        self.glove.set_from_file("images/glove_with_seedpacket.png")
+        self.glove.set_from_file(repo_path("images", "glove_with_seedpacket.png"))
         self.gloveX = 100
         self.gloveY = 100
         #self.gloveOffsetX = 64
@@ -42,7 +43,7 @@ class PlantDrawingArea(gtk.DrawingArea):
         self.gloveOffsetY = 53  
         self.backingPixmap = None
         self.outOfDate = 1
-        self.backgroundImage = gtk.gdk.pixbuf_new_from_file("images/chalk_garden.png")
+        self.backgroundImage = gtk.gdk.pixbuf_new_from_file(repo_path("images", "chalk_garden.png"))
         #self.backgroundImage = gtk.Image()
         #self.backgroundImage.set_from_file("images/chalk_garden.png")
         
@@ -133,7 +134,7 @@ class MainWindow:
         
         MakeButton(vbox, "Open library...", self.openLibrary)
 
-        self.fileName = "test.pla"
+        self.fileName = app_path("test.pla")
         #self.fileName = "test tree.pla"
         #self.fileName = "Garden flowers.pla"
         #self.fileName = "Garden flowers.pla"
@@ -220,7 +221,6 @@ def main():
 if __name__ == "__main__":
     main()
     
-
 
 
 

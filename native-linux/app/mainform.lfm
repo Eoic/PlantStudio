@@ -1,0 +1,138 @@
+object PlantStudioMainForm: TPlantStudioMainForm
+  Left = 100
+  Height = 720
+  Top = 100
+  Width = 1024
+  Caption = 'PlantStudio Native Linux Port'
+  ClientHeight = 720
+  ClientWidth = 1024
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '3.0'
+  object StatusLabel: TLabel
+    Left = 16
+    Height = 20
+    Top = 12
+    Width = 992
+    AutoSize = False
+    Caption = 'PlantStudio native Linux bootstrap'
+    ParentColor = False
+  end
+  object LeftPanel: TPanel
+    Left = 16
+    Height = 636
+    Top = 44
+    Width = 240
+    Anchors = [akTop, akLeft, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 636
+    ClientWidth = 240
+    TabOrder = 0
+    object SidebarTitle: TLabel
+      Left = 0
+      Height = 20
+      Top = 0
+      Width = 240
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Plants In Loaded Library'
+      Layout = tlCenter
+    end
+    object PlantList: TListBox
+      Left = 0
+      Height = 616
+      Top = 20
+      Width = 240
+      Align = alClient
+      ItemHeight = 0
+      OnClick = PlantListClick
+      TabOrder = 0
+    end
+  end
+  object PaintBox: TPaintBox
+    Left = 272
+    Height = 580
+    Top = 44
+    Width = 736
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    OnPaint = PaintBoxPaint
+  end
+  object ToolbarPanel: TPanel
+    Left = 272
+    Height = 44
+    Top = 636
+    Width = 736
+    Anchors = [akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 44
+    ClientWidth = 736
+    TabOrder = 1
+    object ResetAgeButton: TButton
+      Left = 0
+      Height = 31
+      Top = 6
+      Width = 88
+      Caption = 'Age 0'
+      OnClick = GrowButtonClick
+      TabOrder = 0
+      Tag = -1
+    end
+    object Grow1Button: TButton
+      Left = 96
+      Height = 31
+      Top = 6
+      Width = 88
+      Caption = 'Grow +1'
+      OnClick = GrowButtonClick
+      TabOrder = 1
+      Tag = 1
+    end
+    object Grow5Button: TButton
+      Left = 192
+      Height = 31
+      Top = 6
+      Width = 88
+      Caption = 'Grow +5'
+      OnClick = GrowButtonClick
+      TabOrder = 2
+      Tag = 5
+    end
+    object Grow30Button: TButton
+      Left = 288
+      Height = 31
+      Top = 6
+      Width = 88
+      Caption = 'Grow +30'
+      OnClick = GrowButtonClick
+      TabOrder = 3
+      Tag = 30
+    end
+    object RotateLeftButton: TButton
+      Left = 400
+      Height = 31
+      Top = 6
+      Width = 128
+      Caption = 'Rotate Left'
+      OnClick = RotateButtonClick
+      TabOrder = 4
+      Tag = -8
+    end
+    object RotateRightButton: TButton
+      Left = 536
+      Height = 31
+      Top = 6
+      Width = 128
+      Caption = 'Rotate Right'
+      OnClick = RotateButtonClick
+      TabOrder = 5
+      Tag = 8
+    end
+  end
+  object StartupTimer: TTimer
+    Enabled = False
+    Interval = 150
+    OnTimer = StartupTimerTimer
+    Left = 952
+    Top = 8
+  end
+end

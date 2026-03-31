@@ -26,6 +26,28 @@ So, there are at least four options for anyone wanting to work with the code.
 
 Right now, improving on the Python code is probably the easiest way to go.
 
+=== Linux proof of life
+
+This repository now also includes a reproducible legacy Linux viewer path for
+the OLPC GTK code using a containerized Ubuntu 18.04 + Python 2.7 + PyGTK 2
+environment. See LINUX_LEGACY.md for build, smoke-test, screenshot, and run
+instructions.
+
+=== Native Linux port
+
+This repository also now includes an active Lazarus/FPC native Linux workspace
+under native-linux plus scripts for containerized build and headless checks:
+* scripts/build-native-image.sh
+* scripts/build-native-linux.sh
+* scripts/test-native-linux.sh
+* scripts/capture-native-linux.sh
+
+The current native port is an early bootstrap, not full PlantStudio parity yet.
+It does build and run under Linux, uses XDG config paths, loads real text-based
+.pla plant library metadata and plant names, and can emit a PNG proof image at
+artifacts/native-linux-viewer.png. See native-linux/docs/PORTING_NOTES.md for
+current status and next porting targets.
+
 We would also love to see it as, say, a Blender plugin.
 
 Ideally, someday, we wanted to generalized this code to work with arbitrary sets of parameters to be able to breed any kind of 3D model. Maybe someday someone will do that. We enjoyed working on the PlantStudio software, and we hope you have fun playing around with it too. We picked the GPL v3 or  later license, as a sort of constitution for collaboration on the code.

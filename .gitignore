@@ -1,0 +1,8 @@
+/artifacts/
+/for-olpc-python/*.pyc
+/for-olpc-python/hotshot_stats
+/native-linux/build/
+/native-linux/.container-home/
+/native-linux/*.compiled
+/native-linux/*.ppu
+/native-linux/*.o
